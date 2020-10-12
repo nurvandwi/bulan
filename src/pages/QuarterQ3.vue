@@ -9,7 +9,7 @@
     <DetailPenjualan
       title="PENJUALAN PER QUARTER"
       class="mt-custom"
-      :target_bulanan="points.total_target"
+      :contentFor="'DetailPenjualan'"
     />
     <Poin title="POIN PER QUARTER" class="mt-3" />
     <Tarif title class="mt-3" />
@@ -19,11 +19,7 @@
       :Bulan2="points.data[2].bulan"
       :contentFor="'BulanTransaksiQ1'"
     />
-    <DetailPenjualan
-      title="PENJUALAN PER BULAN"
-      class="mt-3"
-      :target_bulanan="points.data[0].point_monthly"
-    />
+    <DetailPenjualan title="PENJUALAN PER BULAN" class="mt-3" />
     <DetailPenjualan title="DETAIL PENJUALAN MEDIO BULAN" class="mt-3" />
     <Poin title="POIN PER BULAN" class="mt-3" />
     <TotalRebate title class="mb-custom" />
@@ -62,7 +58,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet", {
+      .get("http://www.inosis.co.id/mvg2020_api/api.php/dashboard-outlet", {
         headers: { version: this.$route.params.version },
         params: {
           txtKodeOutlet: this.$route.params.outlet_id,

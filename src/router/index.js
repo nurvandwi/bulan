@@ -10,6 +10,9 @@ import PoinCash from "../pages/PoinCash.vue";
 import Rebate from "../pages/Rebate.vue";
 import Pulsa from "../pages/Pulsa.vue";
 import Quarter from "../pages/Quarter.vue";
+import QuarterQ2 from "../pages/QuarterQ2.vue";
+import QuarterQ3 from "../pages/QuarterQ3.vue";
+import QuarterQ4 from "../pages/QuarterQ4.vue";
 import Login from "../pages/Login.vue";
 import ProductDetails from "../pages/ProductDetails.vue";
 import PointCashDetails from "../pages/PointCashDetails.vue";
@@ -97,9 +100,27 @@ const routes = [
     props: true,
   },
   {
-    path: "/Quarter",
+    path: "/Quarter/:version/:outlet_id",
     component: Quarter,
-    name: "quarter",
+    name: "Quarter",
+    props: true,
+  },
+  {
+    path: "/QuarterQ2/:version/:outlet_id",
+    component: QuarterQ2,
+    name: "QuarterQ2",
+    props: true,
+  },
+  {
+    path: "/QuarterQ3/:version/:outlet_id",
+    component: QuarterQ3,
+    name: "QuarterQ3",
+    props: true,
+  },
+  {
+    path: "/QuarterQ4/:version/:outlet_id",
+    component: QuarterQ4,
+    name: "QuarterQ4",
     props: true,
   },
   {
@@ -163,7 +184,7 @@ const routes = [
     props: true,
   },
   {
-    path: "/TransactionProduct",
+    path: "/TransactionProduct/:outlet_id",
     component: TransactionProduct,
     name: "TransactionProduct",
     props: true,

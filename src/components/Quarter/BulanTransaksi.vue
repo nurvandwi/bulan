@@ -18,7 +18,9 @@
                   type="button"
                   class="btn font-custom rounded-pill font-weight-bolder btn-light"
                 >
-                  <h3 class="font12 mb-0 font-weight-bold">JANUARI</h3>
+                  <h3 class="font12 mb-0 font-weight-bold">
+                    {{ Bulan }}
+                  </h3>
                 </button>
               </th>
               <th scope="col">
@@ -26,7 +28,7 @@
                   type="button"
                   class="btn font-custom rounded-pill font-weight-bolder btn-light"
                 >
-                  <h3 class="font12 mb-0 font-weight-bold">FEBRUARI</h3>
+                  <h3 class="font12 mb-0 font-weight-bold">{{ Bulan1 }}</h3>
                 </button>
               </th>
               <th scope="col">
@@ -34,7 +36,36 @@
                   type="button"
                   class="btn font-custom rounded-pill font-weight-bolder btn-light"
                 >
-                  <h3 class="font12 mb-0 font-weight-bold">MARET</h3>
+                  <h3 class="font12 mb-0 font-weight-bold">{{ Bulan2 }}</h3>
+                </button>
+              </th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </section>
+    <section
+      class="section-stats row justify-content-center mt-3 rounded-right rounded-left"
+      v-if="contentFor === 'BulanTransaksiQ2'"
+    >
+      <div class="col-12 col-md-12 pt-2 stats-details">
+        <h2 class="text-white font22 font-custom m-0">Bulan Transaksi</h2>
+        <p class="font8 pb-0 m-0 text-white font-custom font-weight-bolder">
+          Pilih Bulan Transaksi untuk melihat Detail Penjualan, Poin, dan Rebate
+        </p>
+      </div>
+      <div class="content m-0">
+        <table class="table px-0 mb-1">
+          <thead>
+            <tr>
+              <th scope="col">
+                <button
+                  type="button"
+                  class="btn font-custom rounded-pill font-weight-bolder btn-light"
+                >
+                  <h3 class="font12 mb-0 font-weight-bold">
+                    {{ Bulan }}
+                  </h3>
                 </button>
               </th>
               <th scope="col">
@@ -42,7 +73,7 @@
                   type="button"
                   class="btn font-custom rounded-pill font-weight-bolder btn-light"
                 >
-                  <h3 class="font12 mb-0 font-weight-bold">APRIL</h3>
+                  <h3 class="font12 mb-0 font-weight-bold">{{ Bulan1 }}</h3>
                 </button>
               </th>
               <th scope="col">
@@ -50,55 +81,7 @@
                   type="button"
                   class="btn font-custom rounded-pill font-weight-bolder btn-light"
                 >
-                  <h3 class="font12 mb-0 font-weight-bold">MEI</h3>
-                </button>
-              </th>
-              <th scope="col">
-                <button
-                  type="button"
-                  class="btn font-custom rounded-pill font-weight-bolder btn-light"
-                >
-                  <h3 class="font12 mb-0 font-weight-bold">JUNI</h3>
-                </button>
-              </th>
-              <th scope="col">
-                <button
-                  type="button"
-                  class="btn font-custom rounded-pill font-weight-bolder btn-light"
-                >
-                  <h3 class="font12 mb-0 font-weight-bold">JULY</h3>
-                </button>
-              </th>
-              <th scope="col">
-                <button
-                  type="button"
-                  class="btn font-custom rounded-pill font-weight-bolder btn-light"
-                >
-                  <h3 class="font12 mb-0 font-weight-bold">AGUSTUS</h3>
-                </button>
-              </th>
-              <th scope="col">
-                <button
-                  type="button"
-                  class="btn font-custom rounded-pill font-weight-bolder btn-light"
-                >
-                  <h3 class="font12 mb-0 font-weight-bold">SEPTEMBER</h3>
-                </button>
-              </th>
-              <th scope="col">
-                <button
-                  type="button"
-                  class="btn font-custom rounded-pill font-weight-bolder btn-light"
-                >
-                  <h3 class="font12 mb-0 font-weight-bold">OKTOBER</h3>
-                </button>
-              </th>
-              <th scope="col">
-                <button
-                  type="button"
-                  class="btn font-custom rounded-pill font-weight-bolder btn-light"
-                >
-                  <h3 class="font12 mb-0 font-weight-bold">NOVEMBER</h3>
+                  <h3 class="font12 mb-0 font-weight-bold">{{ Bulan2 }}</h3>
                 </button>
               </th>
             </tr>
@@ -112,9 +95,7 @@
 <script>
 export default {
   name: "BoxQuarter",
-  props: {
-    msg: String,
-  },
+  props: ["Bulan", "Bulan1", "Bulan2"]
 };
 </script>
 

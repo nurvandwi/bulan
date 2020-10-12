@@ -5,46 +5,66 @@
         <p
           class="font22 text-top text-white font-custom font-weight-bolder text-center mb-0"
         >
-          MONDELEZ VAGANZA
+          {{ nama_outlet }}
         </p>
 
         <h2 class="font14 text-white font-custom text-center">
-          100000-ANI013 - BINTANG MAHKOTA
+          {{ id_outlet }}
         </h2>
       </div>
       <div class>
         <div class="row pt-2 btn-quarter p-0">
           <div class="col-3 col-md-3 stats-details">
-            <button
-              type="button"
-              class="btn font22 font-weight-bold rounded-circle btn-light"
+            <router-link
+              class="text-white"
+              :to="'/quarter/1/' + `${$route.params.outlet_id}`"
             >
-              Q1
-            </button>
+              <button
+                type="button"
+                class="btn font22 font-weight-bold rounded-circle btn-light"
+              >
+                Q1
+              </button>
+            </router-link>
           </div>
           <div class="col-3 col-md-3 stats-details">
-            <button
-              type="button"
-              class="btn font22 font-weight-bold rounded-circle btn-light"
+            <router-link
+              class="text-white"
+              :to="'/quarterq2/2/' + `${$route.params.outlet_id}`"
             >
-              Q2
-            </button>
+              <button
+                type="button"
+                class="btn font22 font-weight-bold rounded-circle btn-light"
+              >
+                Q2
+              </button>
+            </router-link>
           </div>
           <div class="col-3 col-md-3 stats-details">
-            <button
-              type="button"
-              class="btn font22 rounded-circle font-weight-bold btn-light"
+            <router-link
+              class="text-white"
+              :to="'/quarterq3/3/' + `${$route.params.outlet_id}`"
             >
-              Q3
-            </button>
+              <button
+                type="button"
+                class="btn font22 rounded-circle font-weight-bold btn-light"
+              >
+                Q3
+              </button>
+            </router-link>
           </div>
           <div class="col-3 col-md-3 stats-details">
-            <button
-              type="button"
-              class="btn font22 rounded-circle font-weight-bold btn-light"
+            <router-link
+              class="text-white"
+              :to="'/quarterq4/4/' + `${$route.params.outlet_id}`"
             >
-              Q4
-            </button>
+              <button
+                type="button"
+                class="btn font22 rounded-circle font-weight-bold btn-light"
+              >
+                Q4
+              </button>
+            </router-link>
           </div>
         </div>
         <div class="pb-1 pt-4">
@@ -66,7 +86,9 @@
               >
                 SISA POIN
               </h2>
-              <p class="text-blue font16 font-weight-bold m-0">8.796.000</p>
+              <p class="text-blue font16 font-weight-bold m-0">
+                {{ sisa_point }}
+              </p>
             </div>
           </div>
           <div class="col-6 py-1 col-md-6 m-0 p-0 stats-details">
@@ -88,9 +110,8 @@
 <script>
 export default {
   name: "BoxQuarter",
-  props: {
-    msg: String,
-  },
+  props: ["nama_outlet", "id_outlet", "sisa_point"],
+  methods: {}
 };
 </script>
 
@@ -174,7 +195,6 @@ export default {
 .btn-light:hover {
   background-color: #ffcc00;
 }
-
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .section-stats {
