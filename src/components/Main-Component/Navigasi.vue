@@ -105,7 +105,9 @@
       </li>
       <li>
         <router-link
-          :to="'/quarter/1/' + `${$route.params.outlet_id}`"
+          :to="{
+            path: '/Quarter/1/' + `${$route.params.outlet_id}/` + `1`
+          }"
           style="color: #FFF;"
           class="mx-auto font18"
         >

@@ -13,17 +13,14 @@
     />
     <Poin title="POIN PER QUARTER" class="mt-3" />
     <Tarif title class="mt-3" />
-    <BulanTransaksi
-      :Bulan="points.data[0].bulan"
-      :Bulan1="points.data[1].bulan"
-      :Bulan2="points.data[2].bulan"
-      :contentFor="'BulanTransaksiQ1'"
-    />
-    <DetailPenjualan
-      title="PENJUALAN PER BULAN"
-      class="mt-3"
-      :target_bulanan="points.data[0].point_monthly"
-    />
+    <BulanTransaksi :bulans="points" />
+    <div>
+      <DetailPenjualan
+        title="PENJUALAN PER BULAN "
+        :total_sales="points.data_bulan"
+        class="mt-3"
+      />
+    </div>
     <DetailPenjualan title="DETAIL PENJUALAN MEDIO BULAN" class="mt-3" />
     <Poin title="POIN PER BULAN" class="mt-3" />
     <TotalRebate title class="mb-custom" />
@@ -63,7 +60,10 @@ export default {
   mounted() {
     axios
       .get("http://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet", {
-        headers: { version: this.$route.params.version },
+        headers: {
+          version: this.$route.params.version,
+          bulan: this.$route.params.bulan
+        },
         params: {
           txtKodeOutlet: this.$route.params.outlet_id,
           token: localStorage.token

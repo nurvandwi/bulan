@@ -16,54 +16,65 @@
         <div class="row pt-2 btn-quarter p-0">
           <div class="col-3 col-md-3 stats-details">
             <router-link
-              class="text-white"
-              :to="'/quarter/1/' + `${$route.params.outlet_id}`"
+              :to="{
+                path: '/Quarter/1/' + `${$route.params.outlet_id}/` + `1`
+              }"
             >
-              <button
+              <a
+                v-on:click="push"
                 type="button"
                 class="btn font22 font-weight-bold rounded-circle btn-light"
               >
                 Q1
-              </button>
+              </a>
             </router-link>
           </div>
           <div class="col-3 col-md-3 stats-details">
             <router-link
               class="text-white"
-              :to="'/quarterq2/2/' + `${$route.params.outlet_id}`"
+              :to="{
+                path: '/Quarter/2/' + `${$route.params.outlet_id}/` + `4`
+              }"
             >
-              <button
+              <a
+                v-on:click="push"
                 type="button"
                 class="btn font22 font-weight-bold rounded-circle btn-light"
               >
                 Q2
-              </button>
+              </a>
             </router-link>
           </div>
           <div class="col-3 col-md-3 stats-details">
             <router-link
               class="text-white"
-              :to="'/quarterq3/3/' + `${$route.params.outlet_id}`"
+              :to="{
+                path: '/Quarter/3/' + `${$route.params.outlet_id}/` + `7`
+              }"
             >
-              <button
+              <a
+                v-on:click="push"
                 type="button"
-                class="btn font22 rounded-circle font-weight-bold btn-light"
+                class="btn font22 font-weight-bold rounded-circle btn-light"
               >
                 Q3
-              </button>
+              </a>
             </router-link>
           </div>
           <div class="col-3 col-md-3 stats-details">
             <router-link
               class="text-white"
-              :to="'/quarterq4/4/' + `${$route.params.outlet_id}`"
+              :to="{
+                path: '/Quarter/4/' + `${$route.params.outlet_id}/` + `10`
+              }"
             >
-              <button
+              <a
+                v-on:click="push"
                 type="button"
-                class="btn font22 rounded-circle font-weight-bold btn-light"
+                class="btn font22 font-weight-bold rounded-circle btn-light"
               >
                 Q4
-              </button>
+              </a>
             </router-link>
           </div>
         </div>
@@ -108,10 +119,32 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "BoxQuarter",
   props: ["nama_outlet", "id_outlet", "sisa_point"],
-  methods: {}
+
+  methods: {
+    push() {
+      this.$router.push("/");
+    }
+  },
+  mounted() {
+    axios
+      .get("http://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet", {
+        headers: {
+          version: this.$route.params.version,
+          bulan: this.$route.params.bulan
+        },
+        params: {
+          txtKodeOutlet: this.$route.params.outlet_id,
+          token: localStorage.token
+        }
+      })
+
+      .then(res => (this.points = res.data))
+      .catch(err => console.log(err));
+  }
 };
 </script>
 
