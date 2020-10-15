@@ -16,14 +16,9 @@
           </div>
         </div>
         <div class="row text-center mb-2 border-bottom">
-          <div
-            v-for="(sales, index) in total_sales"
-            :key="index"
-            class="col font10"
-            style="border-right:1px solid #d3d3d3;"
-          >
+          <div class="col font10" style="border-right:1px solid #d3d3d3;">
             <h2 class="font14 text-black font-weight-bolder">
-              {{ sales.total_sales }}
+              123
             </h2>
           </div>
           <div class="col">

@@ -13,17 +13,8 @@
     />
     <Poin title="POIN PER QUARTER" class="mt-3" />
     <Tarif title class="mt-3" />
-    <BulanTransaksi :bulans="points" />
-    <div>
-      <DetailPenjualan
-        title="PENJUALAN PER BULAN "
-        :total_sales="points.data_bulan"
-        class="mt-3"
-      />
-    </div>
-    <DetailPenjualan title="DETAIL PENJUALAN MEDIO BULAN" class="mt-3" />
-    <Poin title="POIN PER BULAN" class="mt-3" />
-    <TotalRebate title class="mb-custom" />
+    <BulanTransaksi />
+    <div></div>
   </div>
 </template>
 
@@ -32,7 +23,6 @@ import axios from "axios";
 import Quarter from "@/components/Quarter/Quarter.vue";
 import DetailPenjualan from "@/components/Quarter/DetailPenjualan.vue";
 import Poin from "@/components/Quarter/Poin.vue";
-import TotalRebate from "@/components/Quarter/TotalRebate.vue";
 import BulanTransaksi from "@/components/Quarter/BulanTransaksi.vue";
 import Tarif from "@/components/Quarter/Tarif.vue";
 export default {
@@ -40,7 +30,6 @@ export default {
     Quarter,
     DetailPenjualan,
     Poin,
-    TotalRebate,
     BulanTransaksi,
     Tarif
   },

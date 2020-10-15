@@ -17,7 +17,7 @@
           <div class="col-3 col-md-3 stats-details">
             <router-link
               :to="{
-                path: '/Quarter/1/' + `${$route.params.outlet_id}/` + `1`
+                path: '/Quarter/1/' + `${$route.params.outlet_id}`
               }"
             >
               <a
@@ -33,7 +33,7 @@
             <router-link
               class="text-white"
               :to="{
-                path: '/Quarter/2/' + `${$route.params.outlet_id}/` + `4`
+                path: '/Quarter/2/' + `${$route.params.outlet_id}`
               }"
             >
               <a
@@ -49,7 +49,7 @@
             <router-link
               class="text-white"
               :to="{
-                path: '/Quarter/3/' + `${$route.params.outlet_id}/` + `7`
+                path: '/Quarter/3/' + `${$route.params.outlet_id}`
               }"
             >
               <a
@@ -65,7 +65,7 @@
             <router-link
               class="text-white"
               :to="{
-                path: '/Quarter/4/' + `${$route.params.outlet_id}/` + `10`
+                path: '/Quarter/4/' + `${$route.params.outlet_id}`
               }"
             >
               <a
